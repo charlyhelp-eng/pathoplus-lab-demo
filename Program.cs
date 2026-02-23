@@ -1,22 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using PathoPlusLab;
-
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllersWithViews();
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 var app = builder.Build();
 
-app.UseStaticFiles();
-app.UseRouting();
-
-app.MapGet("/", () => "PathoPlus Lab Running Successfully 🚀");
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapGet("/", () => "PathoPlus Lab Cloud Version Running Successfully 🚀");
 
 app.Run();
